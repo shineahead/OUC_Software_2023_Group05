@@ -30,3 +30,21 @@
     background: linear-gradient(200deg, #4ace70, #0a86d9);
     background-position-x: -280px;
 }
+
+#imageUpload1 {
+    font-size: 1.4em;
+    height: 15.7em;
+    border-radius: 4px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: none;
+}
+
+#imageUpload2 {
+    font-size: 1.4em;
+    height: 15.7em;
+    border-radius: 4px;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: none;
+}

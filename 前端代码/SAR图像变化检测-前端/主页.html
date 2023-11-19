@@ -27,34 +27,37 @@
     </div>
 
     <!-- 说明区 -->
-    <div style="margin-left: 20px;">
+    <div style="margin-left: 20px; font-size: larger; margin-bottom: 120px;">
         <span>注意事项：</span>
         <ul>
-            <li>请勿上传国家法律法规命令禁止传播的图像</li>
-            <li>请在上传图片时提前对图片进行裁剪</li>
+            <li>请勿上传国家法律法规命令禁止传播的图像!</li>
+            <li>请在上传图片时提前对图片进行裁剪!</li>
         </ul>
     </div>
 
     <!-- /upload:当用户提交表单时，数据将发送到服务器的"/upload"路径。 -->
     <!-- method="post":定义当用户点击提交按钮时应该使用HTTP POST方法来发送表单数据。 -->
     <!-- enctype="multipart/form-data":当表单中包含文件上传控件时，必须使用此编码类型。 -->
-    <div class="pre_div" id="pre_div" style="float:left; margin-left: 20px;">
+    <div class="pre_div" id="pre_div" style="float:left; margin-left: 280px;">
         <form action="/upload" method="post" enctype="multipart/form-data">
+            <img id="imagePreview1" alt="pre_img"
+                style="max-height: 200px; max-width: 200px; position: absolute; margin-top: 40px; margin-left: 10px;">
             <input type="file" name="imageUpload1" id="imageUpload1" accept="image/*">
-            <img id="imagePreview1" alt="pre_img" style="max-height: 200px; max-width: 200px;">
+
         </form>
     </div>
 
-    <div class="after_div" id="after_div" style="float:left; margin-left: 20px;">
+    <div class="after_div" id="after_div" style="float:left; margin-left: 320px;">
         <form action="/upload" method="post" enctype="multipart/form-data">
+            <img id="imagePreview2" alt="after_img"
+                style="max-height: 200px; max-width: 200px;position: absolute; margin-top: 40px; margin-left: 10px;">
             <input type="file" name="imageUpload2" id="imageUpload2" accept="image/*">
-            <img id="imagePreview2" alt="after_img" style="max-height: 200px; max-width: 200px;">
         </form>
     </div>
 
     <div style="clear: both;"></div>
 
-    <button class="generate_result" style="margin-left: 20px; margin-top: 100px; margin-bottom: 40px;">生成结果</button>
+    <button class="generate_result" style="margin-left: 520px; margin-top: 100px; margin-bottom: 40px;">生成结果</button>
 
     <script src="主页.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
