@@ -1,4 +1,4 @@
-document.getElementById('imageUpload1').addEventListener('change', function (e) {
+document.getElementById('inputGroupFile01').addEventListener('change', function (e) {
     var file = e.target.files[0];  // 获取选中的文件  
     var reader = new FileReader();  // 创建一个FileReader对象  
 
@@ -13,7 +13,7 @@ document.getElementById('imageUpload1').addEventListener('change', function (e) 
     }
 });
 
-document.getElementById('imageUpload2').addEventListener('change', function (e) {
+document.getElementById('inputGroupFile02').addEventListener('change', function (e) {
     var file = e.target.files[0];  // 获取选中的文件  
     var reader = new FileReader();  // 创建一个FileReader对象  
 
