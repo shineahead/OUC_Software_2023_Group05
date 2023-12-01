@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,7 @@
     <title>SAR图像变化检测</title>
     <link rel="stylesheet" href="主页.css">
     <link rel="stylesheet" href="bootstrap.css">
+    <link rel="icon" href="./img/ouc_logo.png">
 </head>
 
 <body>
@@ -21,26 +22,25 @@
 
     <nav class="navbar navbar-light fixed-top" style="background-color: rgb(248, 249, 250);">
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="./主页.html">
                 <img src="./img/ouc_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 SAR图像变化检测
             </a>
         </nav>
-        <nav class="nav" style="margin-right:59%;">
-            <a class="nav-link active" href="#">主页</a>
-            <a class="nav-link" href="#">技术简介</a>
-            <a class="nav-link" href="#">关于我们</a>
-            <a class="nav-link disabled">Disabled</a>
+        <nav class="nav" style="margin-right:59px;">
+            <a class="nav-link active" href="./主页.html">主页</a>
+            <a class="nav-link" href="./技术简介.html">技术简介</a>
+            <a class="nav-link" href="./关于我们.html">关于我们</a>
         </nav>
     </nav>
 
     <div style="height: 70px;"></div>
     <div class="jumbotron">
-        <h1 class="display-4">在线SAR图像变化检测平台</h1>
+        <h1 class="display-4" style="font-weight: 400;">在线SAR图像变化检测平台</h1>
         <p class="lead">简单、高效、快捷的在线SAR图像变化检测平台</p>
         <hr class="my-4">
         <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
-        <a class="btn btn-primary btn-lg" href="#" role="button">了解更多</a>
+        <a class="btn btn-primary btn-lg" href="./技术简介.html" role="button">了解更多</a>
     </div>
 
     <!-- 说明区 -->
@@ -58,13 +58,13 @@
     <div class="input-group mb-3" style="align-items: center; display: flex; justify-content: center;">
         <div style="width: 40%;display: flex;">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                <span class="input-group-text" id="inputGroupFileAddon01">上传图片</span>
             </div>
             <div class="custom-file">
 
                 <input type="file" class="custom-file-input" id="inputGroupFile01"
                     aria-describedby="inputGroupFileAddon01">
-                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile01">选择文件</label>
             </div>
         </div>
     </div>
@@ -88,13 +88,13 @@
     <div class="input-group mb-3" style="align-items: center; display: flex; justify-content: center;">
         <div style="width: 40%;display: flex;">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                <span class="input-group-text" id="inputGroupFileAddon02">上传图片</span>
             </div>
             <div class="custom-file">
 
                 <input type="file" class="custom-file-input" id="inputGroupFile02"
                     aria-describedby="inputGroupFileAddon02">
-                <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                <label class="custom-file-label" for="inputGroupFile02">选择文件</label>
             </div>
         </div>
     </div>
@@ -115,7 +115,7 @@
     <div style="clear: both;"></div>
 
     <button id="generate_result" class="generate_result"
-        style="display: flex; justify-content: center; margin-top: 50px;">
+        style="display: flex; justify-content: center; margin-top: 50px; padding-top: 6px;margin-bottom: 50px;">
         生成结果
     </button>
 
