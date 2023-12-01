@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAR图像变化检测</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="icon" href="./img/ouc_logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 100%;
+            margin: 3em;
+            background: #e9ecef;
+            color: #fff;
+        }
+
+        h2,
+        p {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+
+        ul {
+            overflow: hidden;
+            padding: 3em;
+        }
+
+        ul li {
+            margin: 1em;
+            float: left;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #000;
+            background: #ffc;
+            display: block;
+            width: 10em;
+            height: 10em;
+            padding: 1em;
+            box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+            transition: transform 0.15s linear;
+        }
+
+        ul a,
+        ul a:visited,
+        ul a:link,
+        ul a:hover {
+            color: #000;
+            text-decoration: none;
+        }
+
+        ul li a h2 {
+            font-size: 140%;
+            font-weight: bold;
+            padding-bottom: 10px;
+        }
+
+        ul li p {
+            font-size: 180%;
+        }
+
+        ul li a {
+            transform: rotate(-6deg);
+        }
+
+        /* odd even */
+        ul li:nth-child(even) a {
+            transform: rotate(4deg);
+            position: relative;
+            top: 5px;
+            background: #cfc;
+        }
+
+        ul li:nth-child(3n) a {
+            transform: rotate(-3deg);
+            position: relative;
+            top: -5px;
+            background: #ccf;
+        }
+
+        ul li a:hover,
+        ul li a:focus {
+            box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+            transform: scale(1.25);
+            position: relative;
+            z-index: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-light fixed-top" style="background-color: rgb(248, 249, 250);">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="./主页.html">
+                <img src="./img/ouc_logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                SAR图像变化检测
+            </a>
+        </nav>
+        <nav class="nav" style="margin-right:59px;">
+            <a class="nav-link" href="./主页.html">主页</a>
+            <a class="nav-link" href="./技术简介.html">技术简介</a>
+            <a class="nav-link active" href="./关于我们.html">关于我们</a>
+        </nav>
+    </nav>
+
+    <ul>
+        <li>
+            <a href="https://kmrvyozrlx.k.topthink.com/@oucaigroup/fenggao.html" target="_blank">
+                <h2>指导老师</h2>
+                <p>
+                    高峰
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <h2>助教</h2>
+                <p>
+                    花如壮
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="https://shineahead.github.io/" target="_blank">
+                <h2>组长</h2>
+                <p>
+                    甘海
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="https://hanxiangtao.github.io/Self_Website/" target="_blank">
+                <h2>组员</h2>
+                <p>
+                    韩翔
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="https://annyufeng.github.io/" target="_blank">
+                <h2>组员</h2>
+                <p>
+                    安戈新
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="https://tzhcyd.github.io/about/" target="_blank">
+                <h2>组员</h2>
+                <p>
+                    檀宗晗
+                </p>
+            </a>
+        </li>
+        <li>
+            <a href="https://guyuanya.github.io/" target="_blank">
+                <h2>组员</h2>
+                <p>
+                    孙延都
+                </p>
+            </a>
+        </li>
+
+    </ul>
+
+    <script src="主页.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</body>
+
+</html>
