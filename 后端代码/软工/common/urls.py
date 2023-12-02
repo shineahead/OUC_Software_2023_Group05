@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
 
-from .common import *
+from .common import SARView
 
 urlpatterns = [
-    path('newTask/', chack)
+    path('SARDetection/', SARView.as_view())
 ]
 
