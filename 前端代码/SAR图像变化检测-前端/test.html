@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 初始状态样式 */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #da0b0b;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 9999;
+            transition: transform 0.5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 弹窗元素 -->
+    <div id="popup" class="popup">
+        文档已滚动超过 200 像素
+    </div>
+
+    <script>
+        // 设置一个标志位，表示弹窗是否已经显示
+        var popupDisplayed = false;
+
+        // 设置滚动监听器
+        window.addEventListener("scroll", function () {
+            // 获取滚动的垂直距离
+            var scrollDistance = window.scrollY;
+
+            // 设置一个滚动距离的阈值，例如 200 像素
+            var scrollThreshold = 200;
+
+            // 判断滚动距离是否超过阈值且弹窗未显示
+
+            // 获取弹窗元素
+            var popup = document.getElementById("popup");
+
+            // 显示弹窗（通过添加类名实现 CSS 动画）
+            popup.style.display = "block";
+            setTimeout(function () {
+                popup.style.transform = "translate(-50%, -50%) scale(1)";
+            }, 0);
+
+            // 将标志位设置为 true，表示弹窗已经显示
+            popupDisplayed = true;
+
+        });
+    </script>
+
+</body>
+
+</html>
