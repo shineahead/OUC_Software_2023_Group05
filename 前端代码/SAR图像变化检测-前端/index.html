@@ -39,11 +39,39 @@
             top: 0;
             left: 0;
             z-index: -1;
-            object-fit: fill;
+            object-fit: cover;
         }
 
         .nav-link:hover {
             text-decoration: underline;
+        }
+
+        .nav-button {
+            border-radius: 5%;
+            border: solid cornsilk 1px;
+            color: #ffffffb6;
+            background-color: rgb(248, 249, 250, 0);
+            margin-left: 5px;
+            width: 105px;
+            padding-left: 10px;
+        }
+
+        .nav-button:hover {
+            color: black;
+            background-color: #ffffff;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #bdcca5;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 9999;
+            transition: transform 0.5s ease-in-out;
         }
     </style>
 </head>
@@ -53,9 +81,22 @@
     <nav class="navbar navbar-light fixed-top" style="background-color: rgb(248, 249, 250,0);">
         <img src="./assets/img/ouc_logo.png" width="80" height="80" class="d-inline-block align-top" alt="">
         <nav class="nav" style="margin-right:59px;">
-            <a class="nav-link active" href="./主页.html" style="color: #ffffffb6">主页</a>
+            <a class="nav-link active" href="./index.html" style="color: #ffffffb6">主页</a>
             <a class="nav-link" href="./技术简介.html" style="color: #ffffffb6">技术简介</a>
             <a class="nav-link" href="./关于我们.html" style="color: #ffffffb6">关于我们</a>
+            <a class="nav-link" href="./主页.html" style="color: #ffffffb6">
+                <button class="nav-button">Try SAR
+                    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                        class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4"
+                        style="width:17px;height:20px;margin-bottom: 4px;" data-new="" aria-hidden="true"
+                        data-v-67d7128c="">
+                        <polygon fill="currentColor"
+                            points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31"
+                            data-v-67d7128c="">
+                        </polygon>
+                    </svg>
+                </button>
+            </a>
         </nav>
     </nav>
     <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="background-color: #2c71a3;">
@@ -89,11 +130,33 @@
             <div id="head">
                 <h1>SAR 图像变换检测</h1>
                 <p class="sub_head">A application that makes it super easy to differ the complex pics.</p>
+
             </div>
+            <button class="nav-button" id="nav-button" style="margin-top: 300px;">Try SAR
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                    class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4"
+                    style="width:17px;height:20px;margin-bottom: 4px;" data-new="" aria-hidden="true"
+                    data-v-67d7128c="">
+                    <polygon fill="currentColor"
+                        points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31"
+                        data-v-67d7128c="">
+                    </polygon>
+                </svg>
+            </button>
         </section>
+
         <!-- 视频背景 -->
         <video id="video" src="night.mp4" autoplay loop muted></video>
     </div>
+    <div style="position: absolute;top: 100%; height: 2000px;">
+        <p>SAR图像变换检测SAR图像变换检测SAR图像变换检测SAR图像变换检测SAR图像变</p>
+
+    </div>
+    <div id="popup" class="popup">
+        欢迎你来到我们的SAR图像变换检测！
+        <button id="close_popup_button">X</button>
+    </div>
+    <script src="./assets/js/index.js"></script>
 </body>
 
 </html>
