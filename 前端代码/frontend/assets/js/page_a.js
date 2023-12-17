@@ -80,6 +80,10 @@ function closePopup() {
     scale_row = 0;
     document.getElementById("barlen").style.width = '0%';
     clearInterval(intervalId);
+
+    // 设置检测图片的宽度和SRC
+    document.getElementById('result_image').src = "./assets/img/resulting.png";
+    document.getElementById('result_image').style.width = "52%";
 }
 
 document.getElementById('inputGroupFile01').addEventListener('change', function (e) {
@@ -141,7 +145,9 @@ document.getElementById("generate_result").addEventListener("click", function (e
             var base = response.data.base
             console.log(base)
             // 设置检测图片的SRC
-            document.getElementById('result_image').src = base
+            document.getElementById('result_image').src = base;
+            // 设置检测图片的宽度
+            document.getElementById('result_image').style.width = "29%";
 
             cnt += 1
             scale_row = 100;
