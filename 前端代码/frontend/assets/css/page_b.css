@@ -1,0 +1,248 @@
+.left {
+    float: left;
+    /* 固定侧浮动 */
+    width: 47%;
+}
+
+.right {
+    margin-left: 53%;
+    /* 值为固定侧的宽度 */
+}
+
+.cards {
+    display: grid;
+    padding: 5px;
+    background-color: rgb(199, 246, 248);
+}
+
+.left {
+    float: left;
+    /* 固定侧浮动 */
+    width: 47%;
+}
+
+.right {
+    margin-left: 53%;
+    /* 值为固定侧的宽度 */
+}
+
+.cards {
+    display: grid;
+    padding: 5px;
+    background-color: rgb(199, 246, 248);
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+    margin-bottom: 15px;
+}
+
+.hoverQR {
+    position: fixed;
+    display: none;
+    right: 70px;
+    bottom: 293px;
+    height: 250px;
+    width: 200px;
+    align-items: center;
+    /* border: 1px solid; */
+    margin-bottom: 30px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgb(193, 193, 193);
+    z-index: 9999;
+}
+
+.hoverQR img {
+    height: 70%;
+    width: 82%;
+    position: absolute;
+    top: 10px;
+    left: 10%;
+}
+
+.box1 {
+    position: fixed;
+    right: 10px;
+    bottom: 50%;
+    height: 50px;
+    width: 50px;
+    /* border: 1px solid; */
+    margin-bottom: 30px;
+    background-color: #353535;
+    z-index: 9999;
+}
+
+.box1:hover {
+    background-color: #0065dd;
+}
+
+.box1 img {
+    height: 60%;
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+.box2 {
+    position: fixed;
+    right: 10px;
+    bottom: 44%;
+    height: 50px;
+    width: 50px;
+    /* border: 1px solid; */
+    margin-bottom: 30px;
+    background-color: #353535;
+    z-index: 9999;
+}
+
+.box2:hover {
+    background-color: #0065dd;
+}
+
+.box2 img {
+    height: 60%;
+    width: 60%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+
+/* 翻转卡片容器 - 将宽度和高度设置为您想要的任何值。 我们添加了边框属性来演示翻转本身在悬停时会脱离盒子（如果您不想要 3D 效果，请删除透视 */
+.flip-card {
+    background-color: transparent;
+    width: 60%;
+    margin-left: 20%;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    /*如果您不想要 3D 效果，请删除它 */
+}
+
+/* 需要这个容器来定位正反面 */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+/* 将鼠标移到翻转框容器上时进行水平翻转 */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 定位正面和背面 */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+/* 设置正面的样式（如果图像丢失则回退）*/
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+    text-shadow: 1px 1px 2px rgb(139, 194, 229);
+    ;
+}
+
+/* 为背面设置样式 */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: black;
+    transform: rotateY(180deg);
+    text-shadow: 1px 1px 2px rgb(163, 217, 250);
+    ;
+}
+
+body {
+    background-image: url("../img/main_bg.png");
+    /* background-repeat: repeat;
+      background-size: cover;
+      background-color: rgba(0, 0, 0, 0); */
+
+    background-size: 100% 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 1600px;
+    z-index: -10;
+    zoom: 1;
+}
+
+.card {
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+    margin-bottom: 15px;
+}
+
+/*footer*/
+footer {
+    margin-top: 100%;
+    padding: 3px;
+    background-image: url(../img/footer_img4.png);
+    background-size: cover;
+    color: rgb(30, 30, 30);
+}
+
+.hori_line1 {
+    border: 1px solid rgb(30, 30, 30);
+    box-shadow: 0px 1px 0px rgb(90, 90, 90);
+    margin-left: 2em;
+    margin-right: 2em;
+    text-align: center;
+}
+
+.footer_div1 {
+    margin-left: 2em;
+    margin-top: 2.5%;
+    font-size: x-large;
+}
+
+.footer_a1,
+.footer_a2,
+.footer_a3,
+.footer_b1,
+.footer_b2 {
+    text-decoration: none;
+    color: rgb(30, 30, 30);
+    font-size: x-large;
+}
+
+.footer_a1:hover,
+.footer_a2:hover,
+.footer_a3:hover {
+    text-decoration: none;
+    color: rgb(90, 90, 90);
+}
+
+.footer_down1,
+.footer_down2,
+.footer_down3,
+.footer_down4 {
+    font-size: large;
+}
+
+.footer_down4 {
+    margin-bottom: 2.5%;
+}
+
+.footer_qr {
+    position: absolute;
+    height: 16%;
+    width: 10%;
+    right: 5%;
+    bottom: -115%;
+}

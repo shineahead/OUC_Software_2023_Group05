@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/page_a.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="icon" href="./assets/img/ouc_logo.png">
+    <title>SAR图像变换检测</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container {
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            text-align: center;
+        }
+
+        #main {
+            display: inline-block;
+            position: relative;
+            top: 65%;
+            transform: translateY(-50%);
+            color: #fff;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .nav-button {
+            border-radius: 5%;
+            border: solid cornsilk 1px;
+            color: #ffffffb6;
+            background-color: rgb(248, 249, 250, 0);
+            margin-left: 5px;
+            width: 105px;
+            padding-left: 10px;
+        }
+
+        .nav-button:hover {
+            color: black;
+            background-color: #ffffff;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: #bdcca5;
+            padding: 20px;
+            z-index: 9999;
+            transition: transform 0.5s ease-in-out;
+            width: 600px;
+            height: 400px;
+            background: linear-gradient(to bottom right, #3498db, #2ecc71);
+            border: 8px solid #75bceb;
+            border-color: linear-gradient(to bottom right, #3498db, #2ecc71);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            box-sizing: border-box;
+            color: white;
+        }
+
+        #close_popup_button {
+            background: none;
+            border: none;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            border-radius: 15px;
+            border: solid 1px rgb(50, 181, 161);
+            width: 27px;
+        }
+
+        #close_popup_button:hover {
+            transition: 0.1s;
+            transition-duration: 0.3s;
+            background-color: #75bceb;
+        }
+
+        .main_function {
+            position: relative;
+            margin-top: 1020px;
+            width: 100%;
+            height: fit-content;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light fixed-top" style="background-color: rgb(248, 249, 250,0);">
+        <img src="./assets/img/ouc_logo.png" width="80px" height="80px" class="d-inline-block align-top" alt="">
+        <nav class="nav" id="nav" style="margin-right:59px;">
+            <a class="nav-link active" id="link1" href="./page_a.html" style="color: #ffffffb6">主页</a>
+            <a class="nav-link" id="link2" href="./page_b.html" style="color: #ffffffb6">技术简介</a>
+            <a class="nav-link" id="link3" href="./page_c.html" style="color: #ffffffb6">关于我们</a>
+
+        </nav>
+    </nav>
+    <div id="container">
+        <section id="main">
+            <div id="head">
+                <h1>SAR 图像变换检测</h1>
+                <p class="sub_head">A application that makes it super easy to differ the complex pics.</p>
+            </div>
+            <button class="nav-button" id="nav-button" style="margin-top: 300px;">Try SAR
+                <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                    class="a-icon--arrow-north-east400 a-icon--text a-icon--no-align top-[0.05em] relative f-ui-1 ml-2 -mr-4"
+                    style="width:17px;height:20px;margin-bottom: 4px;" data-new="" aria-hidden="true"
+                    data-v-67d7128c="">
+                    <polygon fill="currentColor"
+                        points="5 4.31 5 5.69 9.33 5.69 2.51 12.51 3.49 13.49 10.31 6.67 10.31 11 11.69 11 11.69 4.31 5 4.31"
+                        data-v-67d7128c="">
+                    </polygon>
+                </svg>
+            </button>
+        </section>
+
+        <!-- 视频背景 -->
+        <video id="video" src="night.mp4" autoplay loop muted></video>
+    </div>
+    <!-- <div style="width: 100%; height: 420px; background-color: pink; position: absolute;"></div> -->
+
+    <div class="main_function">
+
+        <!-- <ul
+            style="align-items: center; display: flex; justify-content: center; padding-bottom: 50px; padding-right: 35px;">
+            <span>注意事项：</span>
+            <ul>
+                <li>请勿上传国家法律法规命令禁止传播的图像!</li>
+                <li>请在上传图片时提前对图片进行裁剪!</li>
+            </ul>
+            </li>
+        </ul> -->
+
+        <div class="input-group mb-3"
+            style="align-items: center; margin-top: 80px; display: flex; justify-content: center;">
+            <div style="width: 40%;display: flex;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">上传图片</span>
+                </div>
+                <div class="custom-file">
+
+                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                        aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">选择文件</label>
+                </div>
+            </div>
+        </div>
+        <div style="align-items: center; display: flex; justify-content: center; margin-top: 3%; margin-bottom: 3%;">
+            <img src="" class="img-thumbnail" id="imagePreview1" alt="">
+        </div>
+
+        <div class="input-group mb-3" style="align-items: center; display: flex; justify-content: center;">
+            <div style="width: 40%;display: flex;">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon02">上传图片</span>
+                </div>
+                <div class="custom-file">
+
+                    <input type="file" class="custom-file-input" id="inputGroupFile02"
+                        aria-describedby="inputGroupFileAddon02">
+                    <label class="custom-file-label" for="inputGroupFile02">选择文件</label>
+                </div>
+            </div>
+        </div>
+        <div style="align-items: center; display: flex; justify-content: center; margin-top: 3%; margin-bottom: 3%;">
+            <img src="" class="img-thumbnail" id="imagePreview2" alt="">
+        </div>
+
+        <button id="generate_result" class="generate_result"
+            style="display: flex; justify-content: center; margin-top: 50px; padding-top: 6px; margin-bottom: 50px;">
+            生成结果
+        </button>
+
+
+        <footer>
+            <div class="footer_div1">
+                <span class="footer_tit1">
+                    <a href="./page_a.html" class="footer_a1" id="link4">主页</a>
+                </span>
+                <span class="footer_b1">&nbsp;|</span>
+                <span class="footer_tit2">
+                    <a href="./page_b.html" class="footer_a2" id="link5">技术简介</a>
+                </span>
+                <span class="footer_b2">&nbsp;|</span>
+                <span class="footer_tit3">
+                    <a href="./page_c.html" class="footer_a3" id="link6">关于我们</a>
+                </span>
+            </div>
+            <hr class="hori_line1">
+            <p class="footer_down1">中国海洋大学2023年秋季《软件工程》 - Group 5</p>
+            <p class="footer_down2">地址：山东省青岛市黄岛区三沙路1299号</p>
+            <p class="footer_down3">信息科学与工程学部计算机科学与技术学院</p>
+            <p class="footer_down4">&copy; 2023 SAR图像变化检测. All rights reserved.</p>
+            <img class="footer_qr" src="./assets/img/qrcode_chrome.png" />
+        </footer>
+    </div>
+
+    <div id="tanchuang" class="tanchuang">
+        <div class="jgzs">结果生成</div>
+        <!--结果图展示-->
+        <div class="img_result">
+            <!--进度条-->
+            <div class="progress" id="progress">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" id="barlen"
+                    aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+            </div>
+            <img src="./assets/img/resulting.png" id="result_image"
+                style="width: 52%; height: 90%; margin-left: 24%; margin-right: 24%; padding-top: 2%;" />
+        </div>
+        <div class="btns">
+            <button id="btn_download" class="btn_download"><span>保存图片</span></button>
+            <div style="width: 30px; display: inline-block;">
+            </div>
+            <button id="btn_close" class="btn_close"><span>关闭</span></button>
+        </div>
+    </div>
+
+
+    <div id="popup" class="popup">
+        <ul>
+            <li style="font-size: x-large;">欢迎使用SAR图像变换检测！</li>
+        </ul>
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="height: 280px;">
+
+                    <img src="./assets/img/123.jpg" class="d-block mx-auto"
+                        style="height: fit-content; width: 500px; margin-top: 115px;" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>First step</h5>
+                        <p>将你需要检测的图片上传到网页</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 280px;">
+                    <img src="./assets/img/456.jpg" class="d-block mx-auto" style="height: fit-content; width: 300px;"
+                        alt="">
+                    <div class="carousel-caption d-none d-md-block" style="margin-top: 30px;">
+                        <h5>Second step</h5>
+                        <p>确认好两张图片的大小一致，后点击生成按钮</p>
+                    </div>
+                </div>
+                <div class="carousel-item" style="height: 280px;">
+                    <img src="./assets/img/789.png" class="d-block mx-auto"
+                        style="height: fit-content; width: 500px; margin-top: 115px;" alt="">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Third step</h5>
+                        <p>耐心等待进度条结束后就会出现检测结果</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions"
+                data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions"
+                data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
+        </div>
+        <button id="close_popup_button" style>X</button>
+    </div>
+
+    <script src="./assets/js/page_a.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./bootstrap-4.6.2-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
