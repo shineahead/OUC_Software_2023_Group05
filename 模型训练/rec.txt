@@ -1,6 +1,0 @@
-False Alarm   Pixels Number: 3966 
-Miss Detected Pixels Number: 0 
-Overall Error Pixels Number: 3966 
-PCC :   0.955461 
-
-
